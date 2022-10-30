@@ -1,7 +1,7 @@
 # Homework 16 Flask-SQLAlchemy
 ___
 ### Creating DB:   
-✅ Realized on IMDDB   
+✅ Realized on IMDB   
 ✅ Created Tables: User, Offer, Order with relations according with UML-scheme (Models in 'models' directory)      
 ✅ Tables fill up from JSON files: users.json, offers.json, orders.json in 'data' directory   
 ___
