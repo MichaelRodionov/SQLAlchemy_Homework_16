@@ -5,6 +5,7 @@ db = SQLAlchemy()
 
 
 class User(db.Model):
+    """Model for users"""
     __tablename__ = 'user'
 
     id = db.Column(db.Integer, primary_key=True)
@@ -17,6 +18,7 @@ class User(db.Model):
 
 
 class Offer(db.Model):
+    """Model for offers"""
     __tablename__ = 'offer'
 
     id = db.Column(db.Integer, primary_key=True)
@@ -27,6 +29,7 @@ class Offer(db.Model):
 
 
 class Order(db.Model):
+    """Model for orders"""
     __tablename__ = 'order'
 
     id = db.Column(db.Integer, primary_key=True)

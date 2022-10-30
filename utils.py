@@ -4,12 +4,14 @@ from models.models import User, Offer, Order
 
 
 def get_json_files(path):
+    """Open JSON-file"""
     with open(path, 'r', encoding='UTF-8') as f:
         data = json.load(f)
         return data
 
 
 def load_user():
+    """Create User objects, return list of objects"""
     users_list = []
     users = get_json_files(paths.USERS_PATH)
     for row in users:
@@ -27,6 +29,7 @@ def load_user():
 
 
 def load_offer():
+    """Create Offer objects, return list of objects"""
     offers_list = []
     offers = get_json_files(paths.OFFERS_PATH)
     for row in offers:
@@ -40,6 +43,7 @@ def load_offer():
 
 
 def load_order():
+    """Create Order objects, return list of objects"""
     orders_list = []
     orders = get_json_files(paths.ORDERS_PATH)
     for row in orders:
@@ -59,6 +63,7 @@ def load_order():
 
 
 def make_dict_users(query):
+    """Make a dictionary of users"""
     return {
         'id': query.id,
         'first_name': query.first_name,
@@ -71,6 +76,7 @@ def make_dict_users(query):
 
 
 def make_dict_orders(query):
+    """Make a dictionary of orders"""
     return {
         'id': query.id,
         'name': query.name,
@@ -85,6 +91,7 @@ def make_dict_orders(query):
 
 
 def make_dict_offers(query):
+    """Make a dictionary of offers"""
     return {
         'id': query.id,
         'order_id': query.order_id,

@@ -11,6 +11,7 @@ app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 db.init_app(app)
 
 
+# creating IMDB and filling up
 with app.app_context():
     db.create_all()
     with db.session.begin():
