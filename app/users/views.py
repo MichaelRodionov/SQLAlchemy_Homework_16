@@ -29,7 +29,7 @@ def get_users(user_id=None):
             )
             db.session.add(user)
             db.session.commit()
-            return f"User {data.get('first_name')} {data.get('last_name')} added!"
+            return f"User {data.get('first_name')} {data.get('last_name')} added!", 201
     else:
         try:
 
@@ -55,7 +55,7 @@ def get_users(user_id=None):
                 user = User.query.get(user_id)
                 db.session.delete(user)
                 db.session.commit()
-                return f"User with ID: {user.id} deleted"
+                return f"User with ID: {user.id} deleted", 204
 
         except AttributeError:
             return f'ID "{user_id}" for offers not found'

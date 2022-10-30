@@ -32,7 +32,7 @@ def get_orders(order_id=None):
             )
             db.session.add(order)
             db.session.commit()
-            return f"Order {data.get('name')} added!"
+            return f"Order {data.get('name')} added!", 201
     else:
         try:
 
@@ -60,7 +60,7 @@ def get_orders(order_id=None):
                 order = Order.query.get(order_id)
                 db.session.delete(order)
                 db.session.commit()
-                return f"Order with ID: {order_id} deleted"
+                return f"Order with ID: {order_id} deleted", 204
 
         except AttributeError:
             return f'ID "{order_id}" for orders not found'

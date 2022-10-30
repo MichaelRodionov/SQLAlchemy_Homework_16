@@ -25,7 +25,7 @@ def get_offers(offer_id=None):
             )
             db.session.add(offer)
             db.session.commit()
-            return f"Offer with ID: {offer.id} added!"
+            return f"Offer with ID: {offer.id} added!", 201
     else:
         try:
 
@@ -47,7 +47,7 @@ def get_offers(offer_id=None):
                 offer = Offer.query.get(offer_id)
                 db.session.delete(offer)
                 db.session.commit()
-                return f"Offer with ID: {offer_id} deleted!"
+                return f"Offer with ID: {offer_id} deleted!", 204
 
         except AttributeError:
             return f'ID "{offer_id}" for offers not found'
